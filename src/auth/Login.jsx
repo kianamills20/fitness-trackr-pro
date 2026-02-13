@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useAuth } from "./AuthContext";
-import { usePage } from "../layout/PageContext";
+import { Link, useNavigate } from "react-router";
 
 /** A form that allows users to log into an existing account. */
 export default function Login() {
@@ -37,7 +37,7 @@ export default function Login() {
         <button>Login</button>
         {error && <p role="alert">{error}</p>}
       </form>
-      <a onClick={() => setPage("register")}>Need an account? Register here.</a>
+      <Link to="/register">Need an account? Register here.</Link>
     </>
   );
 }
