@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router";
+import { Routes, Route } from "react-router-dom";
 
 import Layout from "./layout/Layout";
 import Register from "./auth/Register";
@@ -19,13 +19,13 @@ export default function App() {
     <Routes>
       <Route element={<Layout />}>
         <Route index element={<ActivitiesPage />} />
-        <Route path="/activites" element={<ActivitiesPage />} />
-        <Route path="/activites/:id" element={<ActivityDetails />} />
+        <Route path="/activities" element={<ActivitiesPage />} />
+        <Route path="/activities/:id" element={<ActivityDetails />} />
         <Route path="/routines" element={<RoutinesPage />} />
         <Route path="/routines/:id" element={<RoutineDetails />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/*" element={<Error404 />} />
+        <Route path="*" element={<Error404 />} />
       </Route>
     </Routes>
   );

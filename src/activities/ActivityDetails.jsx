@@ -1,4 +1,7 @@
-import { deleteActivity } from "../api/activities";
+import { deleteActivity, getActivity } from "../api/activities";
+import { useEffect, useState } from "react";
+import { useAuth } from "../auth/AuthContext";
+import { useParams, useNavigate} from "react-router-dom";
 
 export default function ActivityDetails() {
   const { token } = useAuth();
@@ -12,7 +15,7 @@ export default function ActivityDetails() {
       const data = await getActivity(id);
       setActivity(data);
     };
-    syncActivity(data);
+    syncActivity();
   }, [id]);
 
   const tryDelete = async () => {

@@ -1,6 +1,4 @@
-import { useState } from "react";
-import { deleteActivity } from "../api/activities";
-import { useAuth } from "../auth/AuthContext";
+import { Link } from "react-router-dom";
 
 export default function ActivityList({ activities }) {
   return (
@@ -11,6 +9,7 @@ export default function ActivityList({ activities }) {
     </ul>
   );
 }
+
 
 function ActivityListItem({ activity }) {
   return (

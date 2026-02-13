@@ -8,8 +8,8 @@ export default function SetList({ sets, syncRoutine }) {
       <h3>Sets</h3>
       {sets.length > 0 ? (
         <ul className="sets">
-          {sets.name((set) => (
-            <Set key={set} syncRoutine={syncRoutine} />
+          {sets.map((set) => (
+            <Set key={set.id} set={set} syncRoutine={syncRoutine} />
           ))}
         </ul>
       ) : (
